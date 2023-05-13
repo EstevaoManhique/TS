@@ -1,0 +1,17 @@
+{
+    "name": "estevaomanhique/ts",
+    "autoload": {
+        "psr-4": {
+            "primeiraPalavraDoNameSpace\\": "primeiraPalavraDoNameSpace/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Estevao Noe Manhique Jr",
+            "email": "93433577+EstevaoManhique@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.6"
+    }
+}

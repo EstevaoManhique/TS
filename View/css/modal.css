@@ -1,0 +1,396 @@
+  /* Estilo da janela modal */
+  .modal {
+    display: none; /* Inicialmente oculta */
+    position: absolute; /* Posicionada fixamente na tela */
+    z-index: 1; /* Colocada acima de todos os outros elementos */
+    left: 10vw;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /*background-color: rgba(0,0,0,0.4); /* Fundo escuro semi-transparente */
+    
+  }
+  
+  /* Estilo do conteúdo da janela modal */
+  .modal-content {
+    background-color: #1F1D2B;
+    margin: auto auto; /* Centraliza a janela modal verticalmente */
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px; /* Largura máxima */
+    position: absolute;
+    border-radius: 10px;
+  }
+  
+  /* Estilo do botão para fechar a janela modal */
+  .close {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  /*Modal Content*/
+  #register_container{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+  }
+
+  /*Select*/
+  #register_container > select {
+    display: inline-block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    height: 2rem;
+  }
+  
+  #register_container > select:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+  }
+
+  /*Botao*/
+
+  #register_container > button {
+    display: inline-block;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #EA7C69;
+    border: 1px solid #EA7C69;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,
+                background-color .15s ease-in-out,
+                border-color .15s ease-in-out,
+                box-shadow .15s ease-in-out;
+    height: 2rem;
+    width: 6rem;
+  }
+  
+  .modal-content > h2{
+    margin-left: 2rem;
+    margin-top: 1rem;
+  }
+
+  #register_container > button:hover, #register_container > button:focus {
+    color: #212529;
+    text-decoration: none;
+  }
+  
+  #register_container > button:focus, #register_container > button.focus {
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+  }
+  
+  #register_container > button-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  #register_container > button-primary:hover {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+  }
+  
+  #register_container > button-primary:focus, #register_container > button-primary.focus {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    box-shadow: 0 0 0 .2rem rgba(38, 143, 255, .5);
+  }
+  
+  /*Tabela bootstrap*/
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .table th,
+  .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+  }
+  
+  .table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+  
+  }
+  
+  .table tbody + tbody {
+    border-top: 2px solid #dee2e6;
+  }
+  
+  .table-bordered {
+    border: 1px solid #dee2e6;
+  }
+  
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+  }
+  
+  .table-hover tbody tr:hover {
+    color: #000;
+    background-color: #f5f5f5;
+  }
+  
+  .rounded {
+    border-radius: 10px;
+  }
+  
+  .btn-delete, .btn-edit {
+  color: #fff; /* cor branca */
+  border: none;
+  border-radius: 5px; /* bordas arredondadas */
+  padding: 0.3rem 1rem; /* preenchimento interno */
+  font-size: 16px; /* tamanho da fonte */
+  cursor: pointer; /* cursor em formato de mão */
+}
+
+.btn-delete{
+  background-color: red;
+}
+
+.btn-edit{
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+.btn-delete:hover, .btn-edit:hover {
+  background-color: #c82333; /* cor vermelha mais escura ao passar o mouse */
+}
+
+.btn-delete i, .btn-edit i {
+  margin-right: 5px; /* espaço entre o ícone e o texto */
+}
+
+/*Second modal*/
+
+/* Estilo do botão para abrir a janela modal */
+#open-modal-btn1 {
+  padding: 10px;
+  color: #EA7C69;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Estilo da janela modal */
+.modal1 {
+  display: none; /* Inicialmente oculta */
+  position: fixed; /* Posicionada fixamente na tela */
+  z-index: 1; /* Colocada acima de todos os outros elementos */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4); /* Fundo escuro semi-transparente */
+  color: black;
+}
+
+/* Estilo do conteúdo da janela modal */
+.modal-content1 {
+  background-color: #1F1D2B;
+  margin: 10% auto; /* Centraliza a janela modal verticalmente */
+  padding: 20px;
+  border: 0.1px dashed #EA7C69;
+  width: 80%;
+  max-width: 30rem; /* Largura máxima */
+  position: relative;
+  border-radius: 10px;
+  color: white;
+}
+
+/* Estilo do botão para fechar a janela modal */
+.close1 {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close1:hover,
+.close1:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.card {
+  border: 1px dashed #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 500px;
+  height: 300px;
+}
+
+.card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px dashed #ccc;
+  border-radius: 5px 5px 0 0;
+  padding: 10px 20px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group img{
+  width: 100%;
+  height: 100%;
+  border-radius: 30%;
+}
+
+.form-control-file {
+  height: auto;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+}
+
+
+
+#fields_product{
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+}
+
+#select_category {
+  padding:5px 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  box-shadow: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-position: right 10px center;
+  cursor: pointer;
+}
+
+#select_category:focus {
+  outline: none;
+  box-shadow: 0 0 3px 2px rgba(0, 123, 255, 0.5);
+  border-color: #007bff;
+}
+
+#select_category option {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #333;
+}
+
+
+input.add_product {
+  display: block;
+  width: 28%;
+  height: 1.5rem;
+  font-size: 1rem;
+  padding: 0 0.4rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+input.add_product:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  border-color: #80bdff;
+}
+
+button#save_food {
+  display: inline-block;
+  padding: 0.2rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: #EA7C69;
+  border: 1px solid white;
+  border-radius: 0.25rem;
+  color: #fff;
+}
+
+button#save_food:hover {
+  background-color: #EA7C69;
+  border-color: #0062cc;
+  color: #fff;
+}
+
+#save_food:focus {
+  outline: 0;
+}
+
+#save_food:active {
+  background-color: #0062cc;
+  border-color: #005cbf;
+  color: #fff;
+}
+
+.form-group{
+  display: flex;
+}

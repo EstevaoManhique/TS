@@ -1,0 +1,138 @@
+:root{	
+	--input-Linear:linear-gradient(120deg, #E75590, #00C2CB);
+	--input-error:red;
+	--button-Linear:linear-gradient(120deg, #E75590, #00C2CB, #E75590);
+	--button-disabled:#acacac;
+	--button-success:rgb(18,151,107);
+	--white:#fff;
+	--black:#303030;
+	--gray:#929292;
+	--light-Gray:#cfcfcf;
+	--border-height:1px;
+}
+
+body{
+	margin:0;
+	padding:0;
+	font-family:sans-serif;
+}
+
+.login{
+	height:100vh;
+    background:#f5f5f9;	
+	display:flex;
+	/*Cria margens de mesma medida a direita e esquerda
+	sempre priorizando o tamanho do seu elemento filho*/
+	justify-content:center;
+	/*Cria margens de mesma medida a emcima e embaixo
+	sempre priorizando o tamanho do seu elemento filho*/
+	align-items:center;
+ }
+ 
+ .login_conteiner{
+	 min-height:400px;
+	 width:300px;
+	 background-color: linear-gradient(120deg, #E75590, #00C2CB, #E75590);;
+	 box-sizing:border-box;
+	 padding:32px;
+	 border-radius:8px;
+	 display:flex;
+	 /*Para que os elementos sejam apresentados em forma de coluna*/
+	 flex-direction:column;
+	 /*Para que os elementos sejam dispostos ao centro*/
+	 align-items:center;
+	 box-shadow: 0px 0px 50px white;
+ }
+ 
+ .login_title{
+	 margin-bottom:32px;
+	 color:#1F1D2B;
+	 font-weight: 300;
+ }
+ 
+ .login_form{
+	 width:100%;
+	 display:flex;
+	 /*Os tres elementos a seguir so funcionam quando a apresentacao eh flexivel*/
+	 flex-direction:column;
+	 align-items:center;
+	 justify-content:center;
+ }
+ 
+ .login_input{
+	height:48px;
+    width:100%;
+	box-sizing:border-box;
+	padding-left:8px;
+	border:unset;
+	outline:#f5f5f5;
+	border-radius: 10px;
+	background-color: #f5f5f5;
+	opacity: 0.7;
+	border-radius: 10px; 
+}
+
+.login_input-border{
+	height: var(--border-height);
+	width:100%;
+	margin-bottom:16px;
+	background-color:var(--light-Gray);
+	transition: .3s ease-in-out;
+ }
+
+/*Focus eh o estado que o elemento (borda) entra quando */
+.login_input:focus + .login_input-border::after{
+	width:100%;
+}
+/*A classe error eh nativa do css*/
+.login_input-border.error{
+	background:var(--input-error);	
+}
+
+.login_input-border.error::after{
+	background:var(--input-error);	
+}
+.login_submit{
+	height:48px;
+	width:100%;
+	outline:none;
+	background:#89cff0;
+	background-size:200%;
+	margin-bottom:32px;
+	color:var(--white);
+	font-size:16px;
+	font-weight: 300;
+	border:unset;
+	border-radius:4px;
+	/*O atributo pointer faz com que apareca uma maozinha como designer do cursor*/
+	cursor:pointer;
+	transition: .5s ease-in-out;
+ background-color: #1F1D2B;
+
+    color: white;
+    font-size: 0.8rem;
+    text-shadow: 0 0 10px white;
+	
+ }
+ .login_submit:disabled{
+	background:var(--button-disabled);
+	cursor:not-allowed;
+ }
+
+ .login_submit:hover{
+	background-position:right;
+ }
+
+ .login_submit.error{
+	background:var(--input-error);
+ }
+
+ .login_submit.success{
+	background:var(--button-success);
+ }
+
+ .login_reset{
+	 font-size:12px;
+	 color:var(--gray);
+	 text-decoration:none;
+ }
