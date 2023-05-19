@@ -1,7 +1,7 @@
 <?php
 //namespace ;
-require_once '../DTO/UserDto.php';
-require_once '../Repository/UserRepository.php';
+require_once './DTO/UserDto.php';
+require_once './Repository/UserRepository.php';
 
 class UsuarioService
 {

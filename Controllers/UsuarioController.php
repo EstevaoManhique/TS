@@ -1,11 +1,8 @@
 <?php
+    require_once "./Model/UsuarioModel.php";
+    require_once "./Service/UsuarioService.php";
+    require_once './DTO/UserDto.php';
 
-    require_once '../Model/UsuarioModel.php';
-    require_once '../Service/UsuarioService.php';
-    require_once '../DTO/UserDto.php';
-    
-    //require_once '../helpers/session_helper.php';
-    
 
     class UsuarioController {
         
@@ -14,6 +11,10 @@
             $this->usuarioService = new UsuarioService();
         }
 
+        public static function index()
+        {   
+            require_once "./View/login.php";
+        }
         public function save(UserDto $userDto)
         {
             //if($this->usuarioService->existsByEmail($userDto->getEmail())){
@@ -37,20 +38,54 @@
 
         public function getAll()
         {
-            //return $this->usuarioService->getAll();   
+            //return $this->usuarioService-;>getAll();   
         }
 
         public function findByEmailAndSenha($email, $senha)
         {
-            $userModel = $this->usuarioService->findByEmailAndSenha($email, $senha);
-            if(isset($userModel)){
-                if (strcmp($userModel->getEstado(),'inactivo')){
-                    return $userModel;
-                }
-            }
-            return $userModel;
+            $us = new UsuarioService();
+            $um = new UsuarioModel();
+            $um = $us->findByEmailAndSenha($email, $senha);
+            return $um;
         }
 
+        public function login()
+        {
+            unset($_SESSION['error']);
+            $logged =false;
+            if(isset($_POST['login'])){
+                if(isset($_POST['email']) && isset($_POST['senha'])){
+                    $email = $_POST['email'];
+                    $senha = $_POST['senha'];
+                    $um = new UsuarioModel();
+
+                    $um = $this->findByEmailAndSenha($email, $senha);
+
+                    if(is_bool($um)){
+                        $_SESSION['error'] = true;
+                        echo "login";
+                        header("location: ../View/login.php");
+                        exit();
+                    }else{
+                        $logged = true;
+                    }
+
+
+                }else{
+                    echo "Preencha todos campos!";
+                    return;
+                }
+                
+                
+                if(isset($logged)){
+                    include_once "./View/dashboard.php";
+                    return;
+                }
+
+
+            }
+  
+        }
         public function update($email, $senha)
         {
             $userModel = $this->usuarioService->findByEmailAndSenha($email, $senha);
@@ -83,16 +118,19 @@
     }
 
 
-    $uc = new UsuarioController();
+    $uc = new UsuarioService();
     $ud = new UserDto();
 
+    /*
     $ud->setEmail("diniselstmddddhhytevao@gmaill.com");
     $ud->setEstado('inactivo');
     $ud->setNome("Dinis");
     $ud->setOutrosNomes("Manhique");
     $ud->setSenha("1234");
     $ud->setTipo("B");    
-
+*/
     //$uc->save($ud);
-    print_r($uc->save($ud));
-   //print_r($uc->findByEmailAndSenha("estevaomanhique68@gmail.com","1234"));
+    //print_r($uc->save($ud));
+ //  var_dump($uc->findByEmailAndSenha("estevaomanhique68@gmail.com","1234"));
+
+// print_r("SS");

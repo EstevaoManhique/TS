@@ -1,19 +1,22 @@
 <?php
-//re
-//include 'Controller/PessoaController.php';
 
+if(!isset($_SESSION)){
+    session_start();
+}
+
+require_once './Controllers/UsuarioController.php';
 // Para saber mais sobre a função parse_url: https://www.php.net/manual/pt_BR/function.parse-url.php
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-
 // Para saber mais estrutura switch, leia: https://www.php.net/manual/pt_BR/control-structures.switch.php
 switch($url)
 {
     case '/':
-        require_once "./View/login.php";
+        $uc = new UsuarioController;
+        $uc->index();
     break;
-
     case '/user/login':
-		require_once "./View/dashboard.php";
+        $uc = new UsuarioController;
+        $uc->login();
     break;
 
     case '/pessoa/form':
@@ -29,6 +32,6 @@ switch($url)
     break;
 
     default:
-        //echo "Erro 404";
+        echo "Erro 404";
     break;
 }
